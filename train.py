@@ -31,8 +31,8 @@ for line in range(len(lines[: min(num_samples, len(lines) - 1)])):
     try:
         lines[line+1]
 
-        input_texts.append(" ".join(lines[line].split(" ")[2:])).lower()
-        target_texts.append("\t" + " ".join(lines[line+1].split(" ")[2:]) + "\n").lower()
+        input_texts.append(" ".join(lines[line].split(" ")[2:]).lower())
+        target_texts.append("\t" + " ".join(lines[line+1].split(" ")[2:]).lower() + "\n")
 
         for char in input_texts:
             if char not in input_characters:
