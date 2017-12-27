@@ -90,10 +90,10 @@ decoder_outputs = decoder_dense(decoder_outputs)
 
 # Define the model that will turn
 # `encoder_input_data` & `decoder_input_data` into `decoder_target_data`
-model = Model([encoder_inputs, decoder_inputs], decoder_outputs, metrics=['accuracy'])
+model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
 
 # Run training
-model.compile(optimizer='rmsprop', loss='categorical_crossentropy')
+model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
 model.fit([encoder_input_data, decoder_input_data], decoder_target_data,
           batch_size=batch_size,
           epochs=epochs,
