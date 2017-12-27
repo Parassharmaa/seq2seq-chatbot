@@ -8,7 +8,7 @@ import glob
 batch_size = 64  # Batch size for training.
 epochs = 100  # Number of epochs to train for.
 latent_dim = 256  # Latent dimensionality of the encoding space.
-num_samples = 2000  # Number of samples to train on.
+num_samples = 1000  # Number of samples to train on.
 # Path to the data txt file on disk.
 data_path = 'hin.txt'
 
@@ -31,8 +31,8 @@ for line in range(len(lines[: min(num_samples, len(lines) - 1)])):
     try:
         lines[line+1]
 
-        input_texts.append(" ".join(lines[line].split(" ")[2:]))
-        target_texts.append("\t" + " ".join(lines[line+1].split(" ")[2:]) + "\n")
+        input_texts.append(" ".join(lines[line].split(" ")[2:])).lower()
+        target_texts.append("\t" + " ".join(lines[line+1].split(" ")[2:]) + "\n").lower()
 
         for char in input_texts:
             if char not in input_characters:
