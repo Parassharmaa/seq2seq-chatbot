@@ -99,7 +99,7 @@ model.fit([encoder_input_data, decoder_input_data], decoder_target_data,
           epochs=epochs,
           validation_split=0.2)
 # Save model
-model.save('s2s.h5')
+model.save('s2s_hin.h5')
 
 # Next: inference mode (sampling).
 # Here's the drill:
