@@ -9,7 +9,7 @@ soup = BeautifulSoup(data.text, "html.parser")
 
 all_links = []
 
-data_folder = "data/raw/"
+data_folder = "raw/"
 characters = ['Leonard', 'Sheldon', 'Raj', 'Howard', 'Penny', 'Bernadette', 'Amy']
 
 for i in soup.find_all("div", {"id": "pages-2"})[0].find_all("a")[1:]:
